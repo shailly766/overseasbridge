@@ -1,0 +1,725 @@
+/**
+ * ==============================================================================
+ * OVERSEAS BRIDGE B2B - MASTER FUTURE-PROOF RESPONSIVE SYSTEM
+ * ==============================================================================
+ * Centralized, reusable, and future-proof responsive design foundation.
+ * Ensures consistent behavior, zero horizontal scroll, fluid typography, 
+ * adaptive grid/flexbox layouts, and touch accessibility across all devices:
+ * - Small Mobiles (320px, 360px, 375px)
+ * - Standard Mobiles (390px, 412px, 430px, 480px)
+ * - Tablets (600px, 768px, 820px, 912px, 1024px)
+ * - Laptops (1280px, 1366px, 1440px)
+ * - Desktops & Ultrawide (1920px+)
+ * - Browser Zoom Levels (75% to 150%)
+ * ==============================================================================
+ */
+
+/* ==========================================================================
+   1. FLUID RESPONSIVE TOKENS & DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+  /* Fluid Spacing Tokens */
+  --space-3xs: clamp(2px, 0.4vw, 4px);
+  --space-2xs: clamp(4px, 0.8vw, 8px);
+  --space-xs:  clamp(8px, 1.2vw, 12px);
+  --space-sm:  clamp(12px, 1.8vw, 16px);
+  --space-md:  clamp(16px, 2.5vw, 24px);
+  --space-lg:  clamp(24px, 3.5vw, 36px);
+  --space-xl:  clamp(32px, 4.5vw, 48px);
+  --space-2xl: clamp(48px, 6.0vw, 72px);
+  --space-3xl: clamp(64px, 8.0vw, 96px);
+
+  /* Fluid Section Vertical Padding */
+  --section-pad-sm: clamp(36px, 5vw, 60px);
+  --section-pad-md: clamp(50px, 7vw, 90px);
+  --section-pad-lg: clamp(70px, 9vw, 130px);
+
+  /* Fluid Typography Scale */
+  --text-h1: clamp(1.95rem, 4.2vw + 0.4rem, 3.85rem);
+  --text-h2: clamp(1.60rem, 3.0vw + 0.3rem, 2.75rem);
+  --text-h3: clamp(1.20rem, 2.0vw + 0.2rem, 1.85rem);
+  --text-h4: clamp(1.05rem, 1.4vw + 0.1rem, 1.35rem);
+  --text-body-lg: clamp(0.98rem, 1.1vw, 1.15rem);
+  --text-body:    clamp(0.88rem, 0.95vw, 1.00rem);
+  --text-body-sm: clamp(0.78rem, 0.85vw, 0.88rem);
+  --text-caption: clamp(0.70rem, 0.75vw, 0.78rem);
+
+  /* Container Max-Widths */
+  --container-narrow: 960px;
+  --container-standard: 1280px;
+  --container-wide: 1440px;
+  --container-fluid-padding: clamp(16px, 4vw, 32px);
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & ZERO-OVERFLOW PROTECTION
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+html, body {
+  max-width: 100vw !important;
+  overflow-x: clip !important;
+  position: relative !important;
+  -webkit-text-size-adjust: 100%;
+}
+
+@supports not (overflow-x: clip) {
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
+
+/* Global Media & Embed Safety */
+img, svg, video, canvas, iframe {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* Word Break Protection for Long URLs, Headings, and Badges */
+h1, h2, h3, h4, h5, h6, p, span, a, li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* ==========================================================================
+   3. REUSABLE CONTAINER & LAYOUT FOUNDATIONS
+   ========================================================================== */
+.theme-container,
+.theme-container-wide,
+.ob-container,
+.container {
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--container-fluid-padding) !important;
+  padding-right: var(--container-fluid-padding) !important;
+}
+
+.theme-container {
+  max-width: var(--container-standard) !important;
+}
+
+.theme-container-wide {
+  max-width: var(--container-wide) !important;
+}
+
+/* Reusable Fluid Grid System */
+.grid-responsive-2 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)) !important;
+  gap: var(--space-md) !important;
+}
+
+.grid-responsive-3 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+  gap: var(--space-md) !important;
+}
+
+.grid-responsive-4 {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important;
+  gap: var(--space-md) !important;
+}
+
+/* Automatic responsive transformation of inline multi-column grids */
+@media (max-width: 1024px) {
+  div[style*="grid-template-columns: repeat(3, 1fr)"],
+  div[style*="grid-template-columns: repeat(4, 1fr)"],
+  div[style*="grid-template-columns: repeat(3,1fr)"],
+  div[style*="grid-template-columns: repeat(4,1fr)"] {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)) !important;
+    gap: 24px !important;
+  }
+  
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1.2fr"],
+  div[style*="grid-template-columns: 1.2fr 1fr"],
+  div[style*="grid-template-columns: 1fr 1.08fr"],
+  div[style*="grid-template-columns: 1.15fr 0.85fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  div[style*="grid-template-columns: repeat(2, 1fr)"],
+  div[style*="grid-template-columns: repeat(2,1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  div[style*="padding: 50px"],
+  div[style*="padding: 40px"],
+  div[style*="padding: 36px"] {
+    padding: clamp(16px, 4vw, 24px) !important;
+  }
+}
+
+/* Reusable Responsive Button Group */
+.btn-group-responsive {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+@media (max-width: 480px) {
+  .btn-group-responsive {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .btn-group-responsive > a,
+  .btn-group-responsive > button {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Responsive Table Wrapper */
+.table-responsive-wrapper {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: var(--space-md);
+  border-radius: 12px;
+}
+
+/* ==========================================================================
+   4. MASTER DUAL HEADER & MOBILE NAVIGATION RESPONSIVENESS
+   ========================================================================== */
+.header-master-wrapper {
+  width: 100% !important;
+  max-width: 100vw !important;
+}
+
+.top-announcement-bar {
+  padding: clamp(6px, 1.2vw, 9px) var(--container-fluid-padding) !important;
+  font-size: clamp(0.72rem, 1vw, 0.85rem) !important;
+  line-height: 1.35 !important;
+}
+
+.site-header {
+  padding: clamp(8px, 1.5vw, 14px) 0 !important;
+}
+
+.custom-logo-link,
+.brand-logo-wrap,
+.brand-logo {
+  max-height: clamp(32px, 4vw, 42px) !important;
+}
+
+.custom-logo,
+.brand-logo img,
+.brand-logo-wrap img {
+  max-height: clamp(32px, 4vw, 42px) !important;
+  width: auto !important;
+}
+
+/* Mobile Menu Drawer & Toggle */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    z-index: 10001;
+    color: #080c16;
+  }
+
+  .mobile-nav-drawer {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: min(85vw, 360px) !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    background: #ffffff !important;
+    box-shadow: -10px 0 30px rgba(15, 23, 42, 0.15) !important;
+    z-index: 10002 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 70px 24px 32px 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .mobile-nav-drawer.active {
+    right: 0 !important;
+  }
+
+  .mobile-close {
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    background: #f1f5f9 !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #080c16 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-nav-links {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .mobile-nav-links li a {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #080c16 !important;
+    text-decoration: none !important;
+    display: block !important;
+    padding: 6px 0 !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .mobile-nav-links li a:hover {
+    color: #e6b200 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-actions .btn-primary {
+    padding: 8px 14px !important;
+    font-size: 0.82rem !important;
+  }
+}
+
+/* ==========================================================================
+   5. HOME HERO SECTION & 4-CARD SPOTLIGHT SLIDER RESPONSIVENESS
+   ========================================================================== */
+.hero-section {
+  padding-top: clamp(120px, 14vw, 170px) !important;
+  padding-bottom: clamp(40px, 6vw, 80px) !important;
+}
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+  align-items: center !important;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  
+  .hero-visual {
+    grid-column: 1 !important;
+    order: 2 !important;
+    max-width: 540px !important;
+    margin: 0 auto !important;
+  }
+}
+
+/* Spotlight 4-Card Slider Fluid Safety */
+.spotlight-badge-card.hero-proof-card {
+  width: 100% !important;
+  max-width: 600px !important;
+  min-height: 128px !important;
+  margin-top: clamp(14px, 2.5vw, 22px) !important;
+  padding: clamp(12px, 2vw, 18px) clamp(14px, 2.5vw, 24px) !important;
+  border-radius: clamp(16px, 2.5vw, 24px) !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.spotlight-avatar-ring {
+  width: clamp(52px, 8vw, 72px) !important;
+  height: clamp(52px, 8vw, 72px) !important;
+  min-width: clamp(52px, 8vw, 72px) !important;
+  min-height: clamp(52px, 8vw, 72px) !important;
+  aspect-ratio: 1 / 1 !important;
+  flex-shrink: 0 !important;
+}
+
+#spotlight-author {
+  font-size: clamp(0.88rem, 1.2vw, 1.05rem) !important;
+  line-height: 1.28 !important;
+  min-height: 2.56em !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+#spotlight-quote {
+  font-size: clamp(0.75rem, 1.0vw, 0.86rem) !important;
+  line-height: 1.38 !important;
+  min-height: 2.8em !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.spotlight-progress-wrap {
+  width: clamp(75px, 12vw, 110px) !important;
+  height: clamp(5px, 0.8vw, 7px) !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .spotlight-badge-card.hero-proof-card {
+    padding: 12px 14px !important;
+    min-height: 112px !important;
+  }
+  
+  .spotlight-badge-card .spotlight-avatar-ring {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+  }
+  
+  #spotlight-author {
+    font-size: 0.84rem !important;
+    line-height: 1.22 !important;
+    min-height: 2.5em !important;
+    margin-bottom: 2px !important;
+  }
+  
+  #spotlight-quote {
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+    min-height: 2.6em !important;
+  }
+}
+
+/* ==========================================================================
+   6. SECTION 02: INDIA EXPANSION ROADMAP & STORYTELLING RESPONSIVENESS
+   ========================================================================== */
+.ob-section-2 {
+  padding: var(--section-pad-md) 0 !important;
+}
+
+.ob-s2-master-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.08fr !important;
+  gap: clamp(24px, 4vw, 50px) !important;
+  align-items: start !important;
+}
+
+@media (max-width: 1024px) {
+  .ob-s2-master-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+.ob-s2-roadmap-card {
+  width: 100% !important;
+  border-radius: clamp(20px, 3vw, 28px) !important;
+  padding: clamp(20px, 3.5vw, 36px) !important;
+  box-sizing: border-box !important;
+}
+
+.ob-s2-milestones-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 6px !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.ob-s2-milestone .ob-s2-node-badge {
+  width: clamp(36px, 5.5vw, 44px) !important;
+  height: clamp(36px, 5.5vw, 44px) !important;
+  font-size: clamp(0.72rem, 1vw, 0.82rem) !important;
+}
+
+.ob-s2-milestone.active-pulse .ob-s2-node-badge {
+  width: clamp(40px, 6vw, 48px) !important;
+  height: clamp(40px, 6vw, 48px) !important;
+  font-size: clamp(0.76rem, 1.1vw, 0.88rem) !important;
+}
+
+.ob-s2-node-label {
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem) !important;
+}
+
+@media (max-width: 480px) {
+  .ob-s2-milestones-row {
+    gap: 3px !important;
+  }
+  
+  .ob-s2-milestone .ob-s2-node-badge {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.68rem !important;
+    margin-bottom: 4px !important;
+  }
+  
+  .ob-s2-milestone.active-pulse .ob-s2-node-badge {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.74rem !important;
+  }
+
+  .ob-s2-node-label {
+    font-size: 0.58rem !important;
+    letter-spacing: -0.02em !important;
+  }
+}
+
+.ob-s2-inspector-panel {
+  padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 16px) !important;
+  border-radius: 12px !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.ob-s2-metrics-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: clamp(10px, 2vw, 14px) !important;
+}
+
+@media (max-width: 520px) {
+  .ob-s2-metrics-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   7. SECTIONS 03 TO 10: FLUID CARD GRIDS, TABLES & WIZARD
+   ========================================================================== */
+/* Interactive Comparison Tables */
+.comparison-table-wrap {
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Multi-Step Wizard Forms */
+.wizard-form-container,
+.lead-form-wrap,
+.lead-form-wizard {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: clamp(20px, 4vw, 40px) !important;
+  border-radius: clamp(16px, 3vw, 24px) !important;
+  box-sizing: border-box !important;
+}
+
+.wizard-grid-2,
+.option-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)) !important;
+  gap: 14px !important;
+}
+
+/* Testimonial, Case Studies, Services & Industries Grids */
+.testimonial-grid,
+.case-studies-grid,
+.services-grid,
+.industries-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)) !important;
+  gap: clamp(16px, 3vw, 28px) !important;
+}
+
+/* Accordion FAQs */
+.faq-accordion-item {
+  width: 100% !important;
+  margin-bottom: 12px !important;
+}
+
+.faq-accordion-header {
+  padding: clamp(14px, 2.5vw, 20px) !important;
+  font-size: clamp(0.95rem, 1.2vw, 1.10rem) !important;
+}
+
+.faq-accordion-body {
+  padding: 0 clamp(14px, 2.5vw, 20px) clamp(14px, 2.5vw, 20px) !important;
+  font-size: clamp(0.85rem, 1.0vw, 0.95rem) !important;
+}
+
+/* ==========================================================================
+   8. FOOTER RESPONSIVENESS
+   ========================================================================== */
+.site-footer,
+.ob-s10-footer {
+  padding-top: var(--section-pad-md) !important;
+  padding-bottom: var(--space-lg) !important;
+}
+
+.footer-grid,
+.ob-s10-grid {
+  display: grid !important;
+  grid-template-columns: 1.5fr repeat(3, 1fr) !important;
+  gap: clamp(24px, 4vw, 48px) !important;
+}
+
+@media (max-width: 1024px) {
+  .footer-grid,
+  .ob-s10-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid,
+  .ob-s10-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+.sub-footer,
+.ob-s10-bottom {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  padding-top: var(--space-md) !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  margin-top: var(--space-xl) !important;
+}
+
+@media (max-width: 640px) {
+  .sub-footer,
+  .ob-s10-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+  }
+}
+
+/* ==========================================================================
+   8B. SECTION 6: DISCLAIMER NOTE RESPONSIVE ALIGNMENT
+   ========================================================================== */
+.ob-s6-bottom-disclaimer-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 18px !important;
+  position: relative !important;
+  z-index: 10 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.ob-s6-cta-note {
+  font-size: 0.85rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  font-style: italic !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .ob-s6-bottom-disclaimer-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+  }
+
+  .ob-s6-cta-note {
+    text-align: center !important;
+    font-size: 0.78rem !important;
+    max-width: 92% !important;
+  }
+}
+
+/* ==========================================================================
+   8C. SECTION 8: FAQ EDITORIAL IMAGE BADGE POSITIONING
+   ========================================================================== */
+.ob-s8-badge-strategy {
+  top: auto !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  background: rgba(224, 242, 254, 0.95) !important;
+  color: #0369a1 !important;
+  border: 1px solid #bae6fd !important;
+}
+
+/* ==========================================================================
+   8D. SECTION 9: INDIA OPERATIONS NETWORK ANIMATED CARD
+   ========================================================================== */
+.ob-s9-img-card-2.ob-s9-network-card {
+  background: #0c152c !important;
+  border: 3px solid #ffffff !important;
+}
+
+.ob-s9-network-svg {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .ob-s9-img-card-2 {
+    width: 76% !important;
+    height: 145px !important;
+    top: 75px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ob-s9-node-pulse,
+  .ob-s9-map-path,
+  .ob-s9-data-packet {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   9. BROWSER ZOOM & TOUCH ACCESSIBILITY SAFEGUARDS
+   ========================================================================== */
+@media (hover: none) and (pointer: coarse) {
+  /* Enforce Touch Targets >= 44px */
+  a, button, input, select, textarea, .clickable-node, .ob-s2-milestone {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Reveal hover details on tap */
+  .hover-trigger-active {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+/* Print Style Safety */
+@media print {
+  .header-master-wrapper,
+  .mobile-nav-drawer,
+  .ob-s2-track-stroke,
+  .hero-visual {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}

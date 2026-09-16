@@ -1,0 +1,1188 @@
+/* ==========================================================================
+   OVERSEAS BRIDGE — MASTER SERVICES ANIMATION & DESIGN SYSTEM
+   Strict Overseas Bridge Brand Consistency (OB Yellow #FFC700, Navy #080C16)
+   ========================================================================== */
+
+:root {
+  --ob-navy: #080c16;
+  --ob-slate-dark: #0f172a;
+  --ob-slate-body: #475569;
+  --ob-slate-muted: #64748b;
+  --ob-slate-light: #f8fafc;
+  --ob-yellow: #ffc700;
+  --ob-yellow-hover: #e6b200;
+  --ob-yellow-light: #fffbeb;
+  --ob-yellow-border: #fde68a;
+  --ob-border-subtle: rgba(15, 23, 42, 0.08);
+  --ob-card-bg: #ffffff;
+  --ob-shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+  --ob-shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --ob-shadow-lg: 0 20px 40px -10px rgba(15, 23, 42, 0.1), 0 1px 3px rgba(15, 23, 42, 0.05);
+  --ob-shadow-yellow: 0 16px 36px -8px rgba(245, 158, 11, 0.22);
+  --ob-radius-sm: 10px;
+  --ob-radius-md: 16px;
+  --ob-radius-lg: 24px;
+  --ob-radius-pill: 9999px;
+}
+
+/* ==========================================================================
+   1. GLOBAL SERVICE PAGE BASE & CONTAINERS
+   ========================================================================== */
+.ob-service-page {
+  background: #ffffff;
+  color: var(--ob-slate-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: clip;
+  position: relative;
+  padding-top: 100px;
+}
+
+.ob-svc-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.ob-svc-section {
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.ob-svc-section-alt {
+  background: #fafbfe;
+  border-top: 1px solid var(--ob-border-subtle);
+  border-bottom: 1px solid var(--ob-border-subtle);
+}
+
+.ob-svc-section-warm {
+  background: #fffdfa;
+  border-top: 1px solid #fef3c7;
+  border-bottom: 1px solid #fef3c7;
+}
+
+/* ==========================================================================
+   2. SECTION HEADERS & TYPOGRAPHY
+   ========================================================================== */
+.ob-svc-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 56px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.ob-svc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 16px;
+  border-radius: var(--ob-radius-pill);
+  background: var(--ob-yellow-light);
+  border: 1px solid var(--ob-yellow-border);
+  color: #92400e;
+  margin-bottom: 16px;
+}
+
+.ob-svc-eyebrow svg {
+  width: 14px;
+  height: 14px;
+}
+
+.ob-svc-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--ob-slate-dark);
+  margin-bottom: 16px;
+}
+
+.ob-svc-desc {
+  font-size: 1.06rem;
+  line-height: 1.68;
+  color: var(--ob-slate-body);
+}
+
+/* ==========================================================================
+   3. HERO SECTION & CALLS TO ACTION
+   ========================================================================== */
+.ob-svc-hero {
+  padding: 70px 0 90px 0;
+  position: relative;
+  background: radial-gradient(circle at 85% 15%, rgba(254, 243, 199, 0.45) 0%, rgba(255, 255, 255, 0) 65%),
+              radial-gradient(circle at 15% 85%, rgba(224, 242, 254, 0.4) 0%, rgba(255, 255, 255, 0) 60%);
+  overflow: hidden;
+}
+
+.ob-svc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ob-svc-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.ob-svc-hero-h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--ob-slate-dark);
+  margin-bottom: 20px;
+}
+
+.ob-svc-hero-h1 mark {
+  background: transparent;
+  color: #d97706;
+}
+
+.ob-svc-hero-lead {
+  font-size: 1.14rem;
+  line-height: 1.7;
+  color: #1e293b;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.ob-svc-hero-support {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ob-slate-body);
+  margin-bottom: 32px;
+}
+
+.ob-svc-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.ob-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 32px;
+  background: var(--ob-navy);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-radius: var(--ob-radius-pill);
+  border: 1px solid var(--ob-navy);
+  box-shadow: 0 10px 25px -3px rgba(8, 12, 22, 0.25);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ob-btn-primary:hover {
+  transform: translateY(-2px);
+  background: #1e293b;
+  box-shadow: 0 16px 32px -4px rgba(8, 12, 22, 0.35);
+}
+
+.ob-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: var(--ob-yellow);
+  color: var(--ob-navy) !important;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.98rem;
+  border-radius: var(--ob-radius-pill);
+  border: 1px solid var(--ob-yellow-hover);
+  box-shadow: 0 8px 20px -3px rgba(245, 158, 11, 0.3);
+  cursor: pointer;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ob-btn-secondary:hover {
+  background: #fbbf24;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -4px rgba(245, 158, 11, 0.45);
+}
+
+.ob-svc-hero-trust-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ob-slate-muted);
+}
+
+.ob-svc-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ob-svc-hero-chip svg {
+  color: #10b981;
+}
+
+/* ==========================================================================
+   4. AMBIENT BACKGROUND KEYWORDS & WATERMARKS (ARIA-HIDDEN)
+   ========================================================================== */
+.ob-ambient-words-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.ob-ambient-word {
+  position: absolute;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0f172a;
+  opacity: 0.045;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.ob-word-1 { top: 8%; left: 4%; font-size: clamp(3rem, 6vw, 5.5rem); animation: obFloatDriftA 28s ease-in-out infinite alternate; }
+.ob-word-2 { top: 38%; right: 5%; font-size: clamp(2.8rem, 5vw, 4.8rem); animation: obFloatDriftB 32s ease-in-out infinite alternate; }
+.ob-word-3 { bottom: 12%; left: 12%; font-size: clamp(2.6rem, 5.5vw, 5rem); animation: obFloatDriftC 26s ease-in-out infinite alternate; }
+.ob-word-4 { top: 60%; right: 18%; font-size: clamp(2.4rem, 4.5vw, 4.2rem); animation: obFloatDriftA 30s ease-in-out infinite alternate; }
+.ob-word-5 { top: 18%; right: 40%; font-size: clamp(2.2rem, 4vw, 3.8rem); animation: obFloatDriftB 24s ease-in-out infinite alternate; }
+.ob-word-6 { bottom: 25%; right: 2%; font-size: clamp(2.5rem, 5vw, 4.5rem); animation: obFloatDriftC 34s ease-in-out infinite alternate; }
+
+@keyframes obFloatDriftA {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -8px); }
+  100% { transform: translate(-8px, 6px); }
+}
+
+@keyframes obFloatDriftB {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-12px, 8px); }
+  100% { transform: translate(8px, -6px); }
+}
+
+@keyframes obFloatDriftC {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(8px, 10px); }
+  100% { transform: translate(-10px, -8px); }
+}
+
+/* Service Background Decorative SVGs */
+.ob-bg-decor-item {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.16;
+  z-index: 1;
+  will-change: transform;
+}
+
+/* ==========================================================================
+   5. BESPOKE FLOATING STATUS CARDS (6-10px Range, Hover Pauses)
+   ========================================================================== */
+.ob-floating-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 3;
+}
+
+.ob-float-card {
+  background: #ffffff;
+  border: 1.5px solid var(--ob-border-subtle);
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.28s ease, 
+              border-color 0.28s ease;
+  will-change: transform;
+  cursor: default;
+}
+
+.ob-float-card:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  border-color: #fde68a;
+  box-shadow: 0 14px 30px -6px rgba(245, 158, 11, 0.22);
+}
+
+.ob-float-card-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ob-float-card-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.ob-float-card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ob-slate-dark);
+}
+
+.ob-float-card-sub {
+  font-size: 0.72rem;
+  color: var(--ob-slate-muted);
+}
+
+.ob-float-card-badge {
+  font-size: 0.70rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* Micro-Floating Animations (6-10px maximum range) */
+.ob-animate-float-1 { animation: obMicroFloatA 6s ease-in-out infinite; }
+.ob-animate-float-2 { animation: obMicroFloatB 7s ease-in-out infinite 0.8s; }
+.ob-animate-float-3 { animation: obMicroFloatA 8s ease-in-out infinite 1.5s; }
+.ob-animate-float-4 { animation: obMicroFloatB 6.5s ease-in-out infinite 2.2s; }
+.ob-animate-float-5 { animation: obMicroFloatA 7.5s ease-in-out infinite 0.5s; }
+.ob-animate-float-6 { animation: obMicroFloatB 8.5s ease-in-out infinite 1.8s; }
+
+@keyframes obMicroFloatA {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes obMicroFloatB {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(7px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Pause animation on hover */
+.ob-floating-cards-container:hover .ob-float-card {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   6. HERO MASTER VISUAL CONTAINERS & STYLING
+   ========================================================================== */
+.ob-svc-hero-visual-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.ob-svc-hero-card-master {
+  background: #ffffff;
+  border: 1.5px solid var(--ob-border-subtle);
+  border-radius: var(--ob-radius-lg);
+  padding: 24px;
+  box-shadow: 0 20px 50px -10px rgba(15, 23, 42, 0.12), 0 2px 6px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.ob-svc-hero-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.ob-svc-hero-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ob-svc-hero-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ob-svc-hero-topbar-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ob-svc-hero-topbar-sub {
+  font-size: 0.78rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==========================================================================
+   7. NEUTRAL ANIMATED GRAPHS & DIAGRAMS
+   ========================================================================== */
+.ob-neutral-chart-card {
+  background: #ffffff;
+  border: 1.5px solid var(--ob-border-subtle);
+  border-radius: var(--ob-radius-lg);
+  padding: 28px;
+  box-shadow: var(--ob-shadow-md);
+  margin-top: 40px;
+}
+
+.ob-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.ob-chart-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+}
+
+.ob-chart-legend {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ob-slate-muted);
+}
+
+.ob-chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ob-chart-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.ob-chart-svg {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  overflow: visible;
+}
+
+.ob-chart-path-pulse {
+  stroke-dasharray: 6 6;
+  animation: obChartDash 25s linear infinite;
+}
+
+@keyframes obChartDash {
+  to { stroke-dashoffset: -300; }
+}
+
+/* ==========================================================================
+   8. CHALLENGES & APPROACH GRID
+   ========================================================================== */
+.ob-svc-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.ob-svc-challenges-panel {
+  background: #ffffff;
+  border: 1px solid var(--ob-border-subtle);
+  border-radius: var(--ob-radius-lg);
+  padding: 32px;
+  box-shadow: var(--ob-shadow-sm);
+}
+
+.ob-svc-challenges-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+  margin-bottom: 20px;
+}
+
+.ob-svc-challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ob-svc-challenge-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #fff8f8;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: #991b1b;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ob-svc-challenge-pill:hover {
+  transform: translateX(4px);
+  background: #fef2f2;
+}
+
+.ob-svc-challenge-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ob-svc-approach-panel {
+  background: #ffffff;
+  border: 1.5px solid var(--ob-yellow-border);
+  border-radius: var(--ob-radius-lg);
+  padding: 32px;
+  box-shadow: 0 12px 30px -5px rgba(245, 158, 11, 0.12);
+}
+
+.ob-svc-approach-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+  margin-bottom: 12px;
+}
+
+.ob-svc-approach-desc {
+  font-size: 0.98rem;
+  color: var(--ob-slate-body);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.ob-svc-approach-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ob-svc-approach-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #fffdf5;
+  border: 1px solid #fef3c7;
+  border-radius: 12px;
+  font-size: 0.90rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.ob-svc-approach-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f59e0b;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   9. CAPABILITIES 6-CARD GRID
+   ========================================================================== */
+.ob-svc-caps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ob-svc-cap-card {
+  background: #ffffff;
+  border: 1px solid var(--ob-border-subtle);
+  border-radius: var(--ob-radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--ob-shadow-sm);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.28s ease, 
+              box-shadow 0.28s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.ob-svc-cap-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #ffc700, #ff9900);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.ob-svc-cap-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: var(--ob-shadow-md);
+}
+
+.ob-svc-cap-card:hover::before {
+  opacity: 1;
+}
+
+.ob-svc-cap-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.ob-svc-cap-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+}
+
+.ob-svc-cap-desc {
+  font-size: 0.95rem;
+  line-height: 1.62;
+  color: var(--ob-slate-body);
+  margin: 0;
+}
+
+/* ==========================================================================
+   10. OPERATIONAL DASHBOARD
+   ========================================================================== */
+.ob-svc-ops-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.ob-svc-ops-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.ob-svc-ops-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ob-svc-ops-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ob-slate-dark);
+}
+
+.ob-svc-ops-list-item svg {
+  color: #10b981;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.ob-svc-dashboard-card {
+  background: #ffffff;
+  border: 1.5px solid var(--ob-border-subtle);
+  border-radius: var(--ob-radius-lg);
+  box-shadow: var(--ob-shadow-lg);
+  overflow: hidden;
+}
+
+.ob-svc-dash-topbar {
+  background: #f8fafc;
+  border-bottom: 1px solid var(--ob-border-subtle);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ob-svc-dash-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.ob-svc-dash-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.ob-svc-dash-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ob-slate-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ob-svc-dash-body {
+  padding: 24px;
+}
+
+.ob-svc-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.ob-svc-metric-box {
+  background: #f8fafc;
+  border: 1px solid var(--ob-border-subtle);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.ob-svc-metric-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ob-slate-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.ob-svc-metric-val {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+}
+
+.ob-svc-metric-sub {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE PROCESS TIMELINE
+   ========================================================================== */
+.ob-svc-timeline-wrap {
+  position: relative;
+  margin-top: 40px;
+}
+
+.ob-svc-timeline-track {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  position: relative;
+}
+
+.ob-svc-timeline-line {
+  position: absolute;
+  top: 36px;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffc700 0%, #10b981 50%, #0284c7 100%);
+  z-index: 1;
+}
+
+.ob-svc-step-card {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border: 1px solid var(--ob-border-subtle);
+  border-radius: 18px;
+  padding: 20px 16px;
+  box-shadow: var(--ob-shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.24s ease, border-color 0.24s ease;
+}
+
+.ob-svc-step-card:hover {
+  transform: translateY(-4px);
+  border-color: #f59e0b;
+}
+
+.ob-svc-step-badge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ob-navy);
+  color: #ffc700;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 10px rgba(8, 12, 22, 0.2);
+}
+
+.ob-svc-step-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+  margin-bottom: 8px;
+}
+
+.ob-svc-step-desc {
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: var(--ob-slate-body);
+  margin: 0;
+}
+
+/* ==========================================================================
+   12. WHY US BENEFITS & CLOSING CTA
+   ========================================================================== */
+.ob-svc-why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.ob-svc-why-card {
+  background: #ffffff;
+  border: 1px solid var(--ob-border-subtle);
+  border-radius: var(--ob-radius-md);
+  padding: 24px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--ob-shadow-sm);
+  transition: transform 0.24s ease;
+}
+
+.ob-svc-why-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ob-yellow-border);
+}
+
+.ob-svc-why-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--ob-yellow-light);
+  border: 1px solid var(--ob-yellow-border);
+  color: #b45309;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ob-svc-why-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+  margin-bottom: 6px;
+}
+
+.ob-svc-why-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ob-slate-body);
+  margin: 0;
+}
+
+.ob-svc-closing-cta {
+  background: linear-gradient(135deg, #ffffff 0%, #fffbeb 100%);
+  border: 1.5px solid var(--ob-yellow-border);
+  border-radius: var(--ob-radius-lg);
+  padding: 48px 56px;
+  box-shadow: var(--ob-shadow-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+.ob-svc-closing-cta-content {
+  flex: 1;
+}
+
+.ob-svc-closing-cta-h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: var(--ob-slate-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.ob-svc-closing-cta-p {
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: var(--ob-slate-body);
+  margin: 0;
+  max-width: 680px;
+}
+
+/* ==========================================================================
+   13. FAQ ACCORDION COMPONENT
+   ========================================================================== */
+.ob-svc-faq-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ob-faq-item {
+  background: #ffffff;
+  border: 1.5px solid var(--ob-border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.ob-faq-item.is-open {
+  border-color: #fde68a;
+  box-shadow: 0 8px 24px -4px rgba(245, 158, 11, 0.12);
+}
+
+.ob-faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 20px 24px;
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ob-slate-dark);
+  transition: color 0.2s ease;
+}
+
+.ob-faq-question:hover {
+  color: #d97706;
+}
+
+.ob-faq-toggle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--ob-slate-dark);
+  flex-shrink: 0;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), background 0.24s ease, color 0.24s ease;
+}
+
+.ob-faq-item.is-open .ob-faq-toggle-icon {
+  transform: rotate(45deg);
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.ob-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.32s cubic-bezier(0.16, 1, 0.3, 1), padding 0.32s ease;
+  padding: 0 24px;
+}
+
+.ob-faq-item.is-open .ob-faq-answer {
+  max-height: 500px;
+  padding: 0 24px 22px 24px;
+}
+
+.ob-faq-answer p {
+  font-size: 0.96rem;
+  line-height: 1.68;
+  color: var(--ob-slate-body);
+  margin: 0;
+}
+
+/* ==========================================================================
+   14. SCROLL REVEAL UTILITIES
+   ========================================================================== */
+.ob-reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.ob-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   15. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .ob-svc-hero-grid,
+  .ob-svc-split-grid,
+  .ob-svc-ops-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .ob-svc-caps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ob-svc-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ob-svc-timeline-track {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .ob-svc-timeline-line {
+    display: none;
+  }
+  
+  .ob-svc-closing-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 36px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ob-service-page {
+    padding-top: 80px;
+  }
+  
+  .ob-svc-section {
+    padding: 60px 0;
+  }
+  
+  .ob-svc-hero {
+    padding: 40px 0 60px 0;
+  }
+  
+  .ob-svc-hero-h1 {
+    font-size: clamp(2rem, 6vw, 2.6rem);
+  }
+  
+  .ob-svc-caps-grid,
+  .ob-svc-approach-grid,
+  .ob-svc-why-grid,
+  .ob-svc-ops-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .ob-svc-timeline-track {
+    grid-template-columns: 1fr;
+  }
+  
+  .ob-svc-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Disable floating movement on mobile for readability & static stacking */
+  .ob-animate-float-1,
+  .ob-animate-float-2,
+  .ob-animate-float-3,
+  .ob-animate-float-4,
+  .ob-animate-float-5,
+  .ob-animate-float-6 {
+    animation: none !important;
+  }
+  
+  .ob-ambient-words-wrap {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .ob-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
