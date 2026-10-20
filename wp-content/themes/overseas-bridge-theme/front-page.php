@@ -177,7 +177,7 @@ get_header();
         </h1>
 
         <p class="hero-subtitle">
-          From market-entry strategy and company formation to banking, compliance, hiring and operational launch—Overseas Bridge brings every workstream together through one clear plan and one accountable point of contact.
+          From market-entry strategy and company formation to banking, compliance, hiring and operational launch—Overseas Moguls brings every workstream together through one clear plan and one accountable point of contact.
         </p>
 
         <div class="hero-actions">
@@ -2299,7 +2299,7 @@ function obUpdateStagePreview(tag, desc, color) {
         Everything You Need to Enter India and <span class="ob-s3-title-underline">Become Operational</span>
       </h2>
       <p class="ob-s3-main-sub">
-        Focus on high-level growth. Overseas Bridge sources, coordinates, and executes every legal, financial, operational, and regulatory workstream with world-class precision.
+        Focus on high-level growth. Overseas Moguls sources, coordinates, and executes every legal, financial, operational, and regulatory workstream with world-class precision.
       </p>
     </div>
 
@@ -3546,7 +3546,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div style="text-align: left !important; max-width: 680px !important;">
         <div style="font-size: 0.78rem !important; font-weight: 800 !important; color: #b45309 !important; text-transform: uppercase !important; letter-spacing: 0.10em !important; margin-bottom: 4px !important;">IMPORTANT NOTICE</div>
         <div style="color: #080c16 !important; font-size: 0.95rem !important; font-weight: 600 !important; line-height: 1.6 !important;">
-          Final structure selection should follow current legal, tax and FDI/FEMA review. Overseas Bridge coordinates the decision process and implementation scope.
+          Final structure selection should follow current legal, tax and FDI/FEMA review. Overseas Moguls coordinates the decision process and implementation scope.
         </div>
       </div>
       <a href="<?php echo esc_url( home_url( '/india-entry-business-setup' ) ); ?>" class="btn-primary" style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 13px 26px !important; border-radius: 30px !important; font-weight: 800 !important; background: #080c16 !important; color: #FFC400 !important; text-decoration: none !important; box-shadow: 0 6px 18px rgba(8,12,22,0.25) !important; transition: transform 0.25s ease !important;">
@@ -4182,13 +4182,21 @@ function obSelectHeroNode(id) {
       color: rgba(8, 12, 22, 0.82);
     }
 
+    .ob-s5-bottom-bar-btn-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
     .ob-s5-bottom-bar-btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background: #080c16;
       color: #ffffff !important;
-      font-weight: 900;
+      font-weight: 800;
       font-size: 1.02rem;
       padding: 14px 32px;
       border-radius: 9999px;
@@ -4196,7 +4204,9 @@ function obSelectHeroNode(id) {
       box-shadow: 0 6px 18px rgba(8, 12, 22, 0.25);
       transition: all 0.25s ease;
       white-space: nowrap;
-      flex-shrink: 0;
+      box-sizing: border-box;
+      max-width: 100%;
+      cursor: pointer;
     }
 
     .ob-s5-bottom-bar-btn:hover {
@@ -4248,15 +4258,29 @@ function obSelectHeroNode(id) {
       .ob-s5-bottom-bar-card {
         flex-direction: column;
         text-align: center;
-        padding: 24px 20px;
-        align-items: stretch;
+        padding: 30px 22px 34px !important;
+        align-items: center !important;
+        gap: 20px !important;
       }
       .ob-s5-bottom-bar-left {
         align-items: center;
+        text-align: center;
+      }
+      .ob-s5-bottom-bar-btn-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
       }
       .ob-s5-bottom-bar-btn {
-        width: 100%;
-        justify-content: center;
+        width: auto !important;
+        min-width: 240px;
+        max-width: calc(100% - 24px) !important;
+        padding: 14px 26px !important;
+        font-size: 0.96rem !important;
+        box-sizing: border-box !important;
+        white-space: nowrap !important;
+        margin: 0 auto !important;
+        justify-content: center !important;
       }
     }
 
@@ -4270,6 +4294,21 @@ function obSelectHeroNode(id) {
       }
       .ob-s5-main-title {
         font-size: 1.95rem !important;
+      }
+      .ob-s5-bottom-bar-card {
+        padding: 26px 16px 30px !important;
+      }
+      .ob-s5-bottom-bar-title {
+        font-size: 1.18rem !important;
+      }
+      .ob-s5-bottom-bar-sub {
+        font-size: 0.88rem !important;
+      }
+      .ob-s5-bottom-bar-btn {
+        width: 100% !important;
+        max-width: 290px !important;
+        padding: 13px 20px !important;
+        font-size: 0.94rem !important;
       }
     }
   </style>
@@ -4502,9 +4541,9 @@ function obSelectHeroNode(id) {
         <span class="ob-s5-bottom-bar-title">Explore Solutions for Your Business</span>
         <span class="ob-s5-bottom-bar-sub">Tailored operational setups, staffing, and regulatory roadmaps for your industry.</span>
       </div>
-      <div>
-        <a href="<?php echo esc_url( home_url( '/industries-served' ) ); ?>" class="ob-s5-bottom-bar-btn">
-          <span>Explore Solutions for Your Business</span>
+      <div class="ob-s5-bottom-bar-btn-wrap">
+        <a href="<?php echo esc_url( home_url( '/industries-served/' ) ); ?>" class="ob-s5-bottom-bar-btn">
+          <span>Explore All Solutions</span>
           <span class="arrow">&rarr;</span>
         </a>
       </div>
@@ -4564,7 +4603,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Build Your India Operation <span class="ob-ls-title-highlight">Without Building Everything Upfront.</span>
       </h2>
       <p class="ob-ls-subtitle">
-        International expansion doesn't have to begin with a large office, hundreds of employees, or significant investment in owned infrastructure. Overseas Bridge helps businesses establish the operation they need today, with the flexibility to expand as their requirements grow.
+        International expansion doesn't have to begin with a large office, hundreds of employees, or significant investment in owned infrastructure. Overseas Moguls helps businesses establish the operation they need today, with the flexibility to expand as their requirements grow.
       </p>
     </div>
 
@@ -9594,7 +9633,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
-              <h3 class="ob-s8-faq-question-text">Can Overseas Bridge help after the company is registered?</h3>
+              <h3 class="ob-s8-faq-question-text">Can Overseas Moguls help after the company is registered?</h3>
             </div>
             <div class="ob-s8-faq-toggle-btn" aria-label="Toggle answer">
               <span class="ob-s8-toggle-cross"></span>
