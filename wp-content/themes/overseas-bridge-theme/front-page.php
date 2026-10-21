@@ -11196,7 +11196,6 @@ document.addEventListener('DOMContentLoaded', function() {
   </script>
 </section>
 
-?>
 <!-- MASTER HOMEPAGE RESPONSIVE OVERHAUL (PERFECT FIT FOR ALL MOBILE, TABLETS, & DESKTOPS) -->
 
 <?php
